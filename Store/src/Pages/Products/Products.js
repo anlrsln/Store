@@ -7,15 +7,12 @@ import Loading from "../../Components/Loading"
 import Error from "../../Components/Error"
 
 
-const Products=({navigation})=>{
-
+const Products=({navigation,route})=>{
     const {loading,data,error} = useFetch(Config.API_URL);
-    console.log("render")
-    console.log(error,loading,data.length)
 
     function handleProductSelect(id){
         navigation.navigate("DetailScreen",(id))
-    }
+    }  
 
     function renderProducts({item}){
         return <ProductCard product={item} onSelect={()=>handleProductSelect(item.id)}/>

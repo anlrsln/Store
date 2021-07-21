@@ -4,7 +4,7 @@ import {NavigationContainer} from "@react-navigation/native"
 import {createStackNavigator} from "@react-navigation/stack"
 
 
-
+import Login from "./Pages/Login"
 import Products from "./Pages/Products"
 import Detail from "./Pages/Detail"
 
@@ -16,6 +16,9 @@ const Router=()=>{
   return(
     <NavigationContainer >
       <Stack.Navigator>
+        <Stack.Screen name="LoginScreen" component={Login} options={{
+        headerShown:false
+        }}/>
         <Stack.Screen name="ProductsScreen" component={Products} options={
           {
             title:"STORE",

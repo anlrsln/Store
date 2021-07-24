@@ -9,7 +9,7 @@ export default StyleSheet.create({
         padding:10,
         alignItems:"center",
         backgroundColor:"white",
-        borderRadius:10
+        borderRadius:10,
     },
     img:{
         height:deviceSize.height/3,
@@ -22,7 +22,7 @@ export default StyleSheet.create({
         padding:10,
         paddingLeft:5,
     },
-    title:{fontWeight:"bold",fontSize:25,marginTop:10},
-    description:{fontStyle:"italic",fontSize:17,marginVertical:10},
-    price:{fontStyle:"italic",fontSize:22,textAlign:"right",marginTop:40}
+    title:{fontWeight:"bold",fontSize:25},
+    description:{fontStyle:"italic",fontSize:17,marginTop:10},
+    price:{fontStyle:"italic",fontSize:22,textAlign:"right"}
 })

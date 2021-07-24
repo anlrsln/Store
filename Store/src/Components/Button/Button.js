@@ -1,13 +1,20 @@
 import React from "react"
-import { View,Text,SafeAreaView,TouchableOpacity} from "react-native"
+import { View,Text,SafeAreaView,TouchableOpacity, ActivityIndicator} from "react-native"
 import styles from "./Button.style"
 
 
 
-const Button=({text,onPress})=>{
+const Button=({text,onPress,loading})=>{
     return(
-        <TouchableOpacity style={styles.btn_container} onPress={onPress}>
-            <Text style={styles.title}>{text}</Text>
+        <TouchableOpacity 
+            style={styles.btn_container} 
+            onPress={onPress}
+            disabled={loading}
+        >
+        {
+            loading ? <ActivityIndicator color="blue"/>
+            : <Text style={styles.title}>{text}</Text>
+        }
         </TouchableOpacity>
     )
 }

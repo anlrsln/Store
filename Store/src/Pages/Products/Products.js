@@ -5,10 +5,13 @@ import ProductCard from "../../Components/ProductCard"
 import useFetch from "../../Hooks/useFetch"
 import Loading from "../../Components/Loading"
 import Error from "../../Components/Error"
+import { useDispatch } from "react-redux"
 
 
 const Products=({navigation,route})=>{
-    const {loading,data,error} = useFetch(Config.API_URL);
+    const dispatch=useDispatch();
+
+    const {loading,data,error} = useFetch(Config.API_PRODUCT_URL);
 
     function handleProductSelect(id){
         navigation.navigate("DetailScreen",(id))
@@ -17,6 +20,7 @@ const Products=({navigation,route})=>{
     function renderProducts({item}){
         return <ProductCard product={item} onSelect={()=>handleProductSelect(item.id)}/>
     }
+
 
     if(loading){
         return <Loading/>
